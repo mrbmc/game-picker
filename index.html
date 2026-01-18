@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Picker - Spinning Wheel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎡 Item Picker Wheel</h1>
+
+        <!-- Winner Display -->
+        <div id="winner-display" class="winner-display hidden">
+            <div class="confetti-container" id="confetti"></div>
+            <h2>🎉 Winner! 🎉</h2>
+            <div id="winner-text" class="winner-text"></div>
+        </div>
+
+        <!-- Spinning Wheel -->
+        <div class="wheel-container">
+            <div class="wheel-pointer">▼</div>
+            <canvas id="wheel" width="500" height="500"></canvas>
+            <button id="spin-btn" class="spin-button">Spin the Wheel!</button>
+        </div>
+
+        <!-- List Management -->
+        <div class="controls">
+            <div class="saved-lists-section">
+                <h3>Saved Lists</h3>
+                <div class="saved-lists-controls">
+                    <select id="saved-lists" class="saved-lists-dropdown">
+                        <option value="">-- Select a saved list --</option>
+                    </select>
+                    <button id="load-list-btn" class="control-btn">Load</button>
+                    <button id="delete-list-btn" class="control-btn delete-btn">Delete</button>
+                </div>
+                <div class="save-list-controls">
+                    <input type="text" id="list-name" placeholder="Enter list name" class="list-name-input">
+                    <button id="save-list-btn" class="control-btn save-btn">Save Current List</button>
+                </div>
+            </div>
+
+            <div class="items-section">
+                <h3>Items</h3>
+                <textarea
+                    id="items-input"
+                    placeholder="Enter items (one per line)&#10;e.g.,&#10;Soccer&#10;Basketball&#10;Swimming&#10;Reading&#10;Drawing"
+                    rows="8"
+                    class="items-input"
+                ></textarea>
+                <button id="update-wheel-btn" class="control-btn update-btn">Update Wheel</button>
+                <p class="item-count">Items: <span id="item-count">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
